@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: supermario
-  name: supermario
+    app: supermario-argocd
+  name: supermario-argocd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: supermario
+      app: supermario-argocd
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,7 +18,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: supermario
+        app: supermario-argocd
     spec:
       containers:
       - image: pengbai/docker-supermario
